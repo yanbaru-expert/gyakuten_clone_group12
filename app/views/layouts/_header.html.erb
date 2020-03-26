@@ -1,0 +1,50 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-dark  ">
+  <a class="navbar-brand" href="/">Gyakuten</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Rails
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">動画教材</a>
+          <a class="dropdown-item" href="#">テキスト教材</a>
+          <a class="dropdown-item" href="#">ライブコーディング</a>
+          <a class="dropdown-item" href="#">質問集</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">AWS講座</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">PHP講座</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">対談</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">情報発信</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">動画編集講座</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">ライティング講座</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">LINE@</a>
+      </li>
+    <% if user_signed_in? %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item active nav-link" %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path, class: 'post nav-link nav-item active' %>
+      <%= link_to '新規ユーザー登録', new_user_registration_path, class: 'post nav-link nav-item active' %>
+    <% end %>
+    </ul>
+    </div>
+  </nav>
