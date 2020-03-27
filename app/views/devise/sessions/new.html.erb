@@ -1,5 +1,6 @@
+
 <div class="container d-flex justify-content-center">
-  <div class="col-md-5 col-12">
+  <div class="col-12 col-md-5">
 
     <%# フラッシュを表示 %>
     <% if flash[:alert] %>
@@ -12,34 +13,35 @@
     <% end %>
 
 
-    <h2>ログイン</h2>
+    <h1><%= t('.sign_in') %></h1>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      
       <div class="form-group">
-        <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <%= f.label :パスワード %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="form-group">
-          <%= f.check_box :remember_me %>
-          <%= f.label :次回から自動的にログイン %>
+        <div class="form-group form-check">
+          <%= f.check_box :remember_me, class: 'form-check-input' %>
+          <%= f.label :remember_me, class: 'form-check-label' do %>
+            <%= resource.class.human_attribute_name('remember_me') %>
+          <% end %>
         </div>
       <% end %>
 
       <div class="form-group">
-        <%= f.submit "ログインする", class:"btn btn-primary" %>
+        <%= f.submit  t('.sign_in'), class: 'btn btn-primary' %>
       </div>
-
     <% end %>
 
-    <%# render "devise/shared/links" %>
+    <%# render 'devise/shared/links' %>
 
   </div>
 </div>
+
