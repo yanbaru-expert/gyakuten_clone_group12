@@ -1,22 +1,17 @@
 @import 'bootstrap/scss/bootstrap';
 
-
-nav {
+nav{
     background-color: #5D99FF;
-  }
-.navbar-brand{
-    font-size: 2.3vw;
-    padding-left: 115px;
+    .navbar-brand {
+        font-size: 170%;
+        padding-left: 4%;
+    }
+    div {
+        font-size: 1.35vw;
+        padding-left: 3%;
+    }
+    dropdown-item {
+        font-size: 18px;
+        color:#5D99FF;
+    }
 }
-
-nav div{
-    font-size: 1.2vw;
-    padding-left:85px;
-}
-
-
-.dropdown-item{
-    font-size: 18px;
-    color:#5D99FF;
-}
-
