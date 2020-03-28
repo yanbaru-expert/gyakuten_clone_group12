@@ -7,3 +7,7 @@
 <input class="btn btn-primary" type="reset" value="Reset">
 
 
+<% @movies.each do |movie| %>
+    <p><%= movie[:movie_title] %></p>
+    <iframe width="560" height="315" <%= video_tag "#{movie[:movie_url]}"%> frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<% end %>
