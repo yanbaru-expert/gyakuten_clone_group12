@@ -3,8 +3,8 @@ class Movie < ApplicationRecord
         list = []
         CSV.foreach(path, headers: true) do |row|
             list << {
-                movie_title: row["movie_title"],
-                movie_url: row["movie_url"]
+                title: row["title"],
+                url: row["url"]
         }
         end
         puts "データのインポートを開始しました！"
