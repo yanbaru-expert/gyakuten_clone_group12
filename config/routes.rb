@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/aws',to:'aws#index'
+  resources :aws
   devise_for :users
 
   ActiveAdmin.routes(self)
