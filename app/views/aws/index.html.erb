@@ -16,7 +16,7 @@
     <% @aws.each.with_index(1) do |aws,i| %>
       <tr>
         <th scope="row"><%= i %></th>
-        <td><%=aws.title%></td>
+        <td><a href ="/aws/<%=aws.id%>"><%=aws.title%></a></td>
       </tr>
     <% end %>
   </tbody>
