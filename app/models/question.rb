@@ -3,8 +3,8 @@ class Question < ApplicationRecord
     list = []
     CSV.foreach(path, headers: true) do |row|
       list << {
-              question: row["question"],
-              detail: row["detail"],
+              title:row["title"],
+              detail:row["detail"]
       }
     end
 
@@ -14,7 +14,7 @@ class Question < ApplicationRecord
       Question.create!(list)
       puts "インポートを完了しました"
     rescue ActiveModel::UnknownAttributeError => invalid
-      puts "インポートに失敗 :UnknownAttributeError"
+      puts "インポートに失敗 :#{invalid}"
     end
   end
 end
