@@ -1,7 +1,10 @@
-<% @movies.each do |movie| %>
+
+<div class="mb-5">
+  <% @movies.each do |movie| %>
     <p><%= movie[:title] %></p>
     <iframe width="560" height="315" <%= video_tag "#{movie[:url]}"%> frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<% end %>
+  <% end %>
+</div>
 
 
 <%= paginate @movies %>
