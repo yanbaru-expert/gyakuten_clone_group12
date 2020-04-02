@@ -11,4 +11,5 @@ namespace :import_csv do
   task aws: :environment do
     Awstext.import('db/csv_data/aws_text_data.csv')
   end
+
 end
