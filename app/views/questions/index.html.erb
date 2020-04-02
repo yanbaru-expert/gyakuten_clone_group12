@@ -1,6 +1,8 @@
 <% @questions.each do |question| %>
-  <p class="container">
-    <%= question.title %>
-    <%= question.detail %>
-  </p>
+  <div class="w-50 my-0 mx-auto">
+    <p class="p-3 border border-dark rounded">
+      <%= question.title %>
+      <%= question.detail %>
+    </p>
+  </div>
 <% end %>
