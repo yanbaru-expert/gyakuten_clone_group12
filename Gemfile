@@ -32,6 +32,7 @@ gem 'rails-i18n'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
+gem 'kaminari'
 #Markdown
 gem 'redcarpet'
 #シンタックスハイライト
