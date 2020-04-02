@@ -1,5 +1,4 @@
 namespace :import_csv do
-  
   #rakeコマンド
   #rake import_csv:aws
   desc "AWS CSVをインポート"
@@ -11,5 +10,4 @@ namespace :import_csv do
   task questions: :environment do
     Question.import('db/csv_data/question_data.csv')
   end
-
 end
