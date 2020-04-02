@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :aws
   devise_for :users
 
   ActiveAdmin.routes(self)

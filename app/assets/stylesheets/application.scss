@@ -1,6 +1,6 @@
 @import 'bootstrap/scss/bootstrap';
 
-nav{
+.nav{
     background-color: #5D99FF;
     .navbar-brand {
         font-size: 170%;
@@ -14,4 +14,12 @@ nav{
         font-size: 18px;
         color:#5D99FF;
     }
+}
+.bg-new{
+    background-color: #5D99FF;
+  }
+
+.container {
+    width: 710px;
+    margin:5rem auto
 }
