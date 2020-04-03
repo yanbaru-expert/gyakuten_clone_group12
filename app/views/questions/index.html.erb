@@ -1,0 +1,8 @@
+<% @questions.each do |question| %>
+  <div class="container">
+     <p class="small-container p-3">
+        <%= question.title .truncate(50) %>
+     </p>
+  </div>
+<% end %>
+
