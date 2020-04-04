@@ -1,8 +1,24 @@
-<% @questions.each do |question| %>
-  <div class="container">
-     <p class="small-container p-3">
-        <%= question.title .truncate(50) %>
-     </p>
-  </div>
+<div class="container">
+<h2>新規投稿</h2>
+<%= form_for @question, url:questions_path, html: {method: :post} do |f| %>
+   <div class="form-group">
+      <%= label_tag "form-title","【質問】" %>
+      <%= f.text_field :title ,id:"form-title", class:"form-control"  %>
+
+   </div>
+   <div class="form-group">
+      <p><%= label_tag "form-detail","【詳細】" %></p>
+      <%= f.text_field :detail ,id:"form-detail", class:"form-control" %>
+   </div>
+      <%= submit_tag "送信",class:"btn btn-primary" ,id:"question-btn" %>
 <% end %>
+
+<% @questions.each do |question| %>
+   <p class="small-container p-3">
+      <%= question.title.truncate(50) %>
+   </p>
+<% end %>
+</div>
+
+
 

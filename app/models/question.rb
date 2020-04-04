@@ -1,4 +1,7 @@
 class Question < ApplicationRecord
+  validates :title, presence: true
+  validates :detail, presence: true
+
   # rake import_csv:questions  
   def self.import(path)
     list = []
