@@ -1,4 +1,8 @@
 class Question < ApplicationRecord
+
+  # 「dependent: :destroy」：solutionsテーブルが削除されたら同時に削除
+  has_many :solutions, dependent: :destroy
+
   def self.import(path)
     list = []
     CSV.foreach(path, headers: true) do |row|
