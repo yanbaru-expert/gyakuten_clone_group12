@@ -29,13 +29,6 @@ ActiveRecord::Schema.define(version: 2020_04_04_115405) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table "aws_texts", force: :cascade do |t|
-    t.string "title"
-    t.string "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "awstexts", force: :cascade do |t|
     t.string "title"
     t.string "content"
@@ -58,6 +51,8 @@ ActiveRecord::Schema.define(version: 2020_04_04_115405) do
   end
 
   create_table "solutions", force: :cascade do |t|
+    t.text "title"
+    t.text "detail"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
