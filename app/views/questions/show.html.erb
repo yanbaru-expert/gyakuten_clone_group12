@@ -1,0 +1,18 @@
+<p>【質問】</p>
+<% title = @question.title %>
+<%= markdown(title).html_safe %>
+<hr>
+<p>【詳細】</p>
+<%  content = @question.detail %>
+<%= markdown(content).html_safe %>
+
+<hr>
+<p>【markdown　確認用】</p>
+<%
+  text =<<~TEXT
+    # 大見出し
+    ## 中見出し
+    ### 小見出し
+  TEXT
+ %>
+<%= markdown(text).html_safe %>

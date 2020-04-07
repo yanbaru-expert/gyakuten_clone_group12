@@ -25,8 +25,8 @@
 }
 
 .small-container{
-    font-size: 25px;
-    
+    font-size: 22px;
+    text-decoration: none;
     border: solid 2px;
     border-radius: 10px;
 
@@ -34,17 +34,20 @@
     overflow: hidden;
     height: 150px;
     transition: 0.5s;
+    .days{
+        font-size: 18px;
+    }
+
 }
 .small-container:hover {
     transform: translateY(-5px);
     box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
     opacity: 0.7;
     border-color: rgb(131, 11, 17);
-    
+
 
   }
 
 #question-btn{
     margin-bottom: 30px;
 }
-  

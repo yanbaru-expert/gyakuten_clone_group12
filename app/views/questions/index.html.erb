@@ -1,24 +1,34 @@
-<div class="container">
-<h2>新規投稿</h2>
-<%= form_with model:@question, url:questions_path, local: true do |f| %>
-   <div class="form-group">
-      <%= label_tag "form-title","【質問】" %>
-      <%= f.text_area :title ,id:"form-title", class:"form-control", rows:3 %>
+<div class = "question">
+   <h2>新規投稿</h2>
+   <%= form_with model:@question, url:questions_path, local: true do |f| %>
+      <div class="form-group">
+         <%= label_tag "form-title","【質問】" %>
+         <%= f.text_area :title ,id:"form-title", class:"form-control", rows:3 %>
 
-   </div>
-   <div class="form-group">
-      <p><%= label_tag "form-detail","【詳細】" %></p>
-      <%= f.text_area :detail ,id:"form-detail", class:"form-control", rows:10 %>
-   </div>
-      <%= f.submit "送信",class:"btn btn-primary btn-block" ,id:"question-btn" %>
-<% end %>
+      </div>
+      <div class="form-group">
+         <p><%= label_tag "form-detail","【詳細】" %></p>
+         <%= f.text_area :detail ,id:"form-detail", class:"form-control", rows:10 %>
+      </div>
+         <%= f.submit "送信",class:"btn btn-primary btn-block" ,id:"question-btn" %>
+   <% end %>
 
-<% @questions.each do |question| %>
-   <p class="small-container p-3">
-      <%= question.title.truncate(50) %>
-   </p>
-<% end %>
+   <% @questions.each do |question| %>
+      <div class="container">
+      <div class = "small-container p-3">
+         <%= link_to(question_path(question.id)) do %>
+               <div class="row ">
+                  <div class="col-7 title-container">
+                        <p><%= truncate(question.title, length: 50) %></p>
+                  </div>
+                  <div class="col-5">
+                     <div class="text-right days">
+                        <p>質問日　<%= question.created_at.strftime('%Y年%m月%d日') %></p>
+                     </div>
+                  </div>
+               </div>
+         <% end %>
+      </div>
+      </div>
+   <% end %>
 </div>
-
-
-
