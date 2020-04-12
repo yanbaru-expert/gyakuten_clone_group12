@@ -1,3 +1,4 @@
 class Solution < ApplicationRecord
-  belongs_to :question
+  belongs_to :question, optional:true
+  
 end

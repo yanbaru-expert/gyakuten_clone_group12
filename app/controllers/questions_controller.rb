@@ -5,6 +5,8 @@ class QuestionsController < ApplicationController
   end
   def show
     @question = Question.find(params[:id])
+    @questions =Question.all.includes(:solutions)
+
   end
 
   def create

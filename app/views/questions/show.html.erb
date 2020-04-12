@@ -16,3 +16,19 @@
   TEXT
  %>
 <%= markdown(text).html_safe %>
+
+<h1>【回答】</h1>
+
+<%= @question.solutions %>
+
+
+<h1>【回答投稿】</h1>
+<%= form_with model:@solution, url:solutions_path, local: true do |f| %>
+  
+  <div class="form-group">
+     <p><%= label_tag "form-detail","【詳細】" %></p>
+     <%= f.text_area :detail ,id:"form-detail", class:"form-control", rows:10 %>
+  </div>
+  <%= f.hidden_field :title, :value => @question.id  %>
+     <%= f.submit "送信",class:"btn btn-primary btn-block" ,id:"question-btn" %>
+<% end %>
