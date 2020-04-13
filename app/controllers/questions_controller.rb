@@ -3,16 +3,18 @@ class QuestionsController < ApplicationController
     @question = Question.new
     @questions = Question.all.order(id: "DESC")
   end
-  def show
-    @question = Question.find(params[:id])
-    @questions =Question.all.includes(:solutions)
-
-  end
 
   def create
     Question.create(question_params)
     redirect_to "/questions"
   end
+  
+  def show
+    @question = Question.find(params[:id])
+    @solution = @question.solutions
+  end
+
+  
 
   private
 
