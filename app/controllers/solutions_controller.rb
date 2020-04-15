@@ -3,15 +3,13 @@ class SolutionsController < ApplicationController
       
     
       def create
-        question = Question.find_by(id:params[:question_id])
-        @solution =  question.solutions.build(solution_params)
-        @solution.save
+        Solution.create(solution_params)
         redirect_to "/questions/#{params[:question_id]}"
       end
     
       private
       def solution_params
-        params.require(:solution).permit(:title,:detail)
+        params.require(:solution).permit(:title,:detail).merge(question_id: params[:question_id])
       end
       
 end
