@@ -3,9 +3,9 @@ class SolutionsController < ApplicationController
       
     
       def create
-        @question = Question.find_by(id:params[:question_id])
-        @solution = @question.solutions.create
-        
+        question = Question.find_by(id:params[:question_id])
+        @solution =  question.solutions.build(solution_params)
+        @solution.save
         redirect_to "/questions/#{params[:question_id]}"
       end
     

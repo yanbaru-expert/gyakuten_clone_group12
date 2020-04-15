@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
   end
   
   def show    
-    @question  = Question.find(params[:id])
+    @question  = Question.find_by(id:params[:id])
     @solution  = Solution.new
     @solutions = @question.solutions
   end
